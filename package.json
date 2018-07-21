@@ -1,0 +1,23 @@
+{
+  "name": "react-ssr-graphql-auth-materialui",
+  "version": "0.1.0",
+  "author": "Stars Aligned",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "apollo-boost": "latest",
+    "apollo-link-context": "latest",
+    "cookie": "latest",
+    "graphql": "latest",
+    "isomorphic-unfetch": "latest",
+    "next": "latest",
+    "prop-types": "latest",
+    "react": "latest",
+    "react-apollo": "latest",
+    "react-dom": "latest"
+  }
+}
