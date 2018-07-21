@@ -11,7 +11,6 @@ class MyDocument extends Document {
         return (
             <html dir="ltr">
                 <Head>
-                    <title>Veda Wiki</title>
                     <meta charSet="utf-8" />
                     {/* Use minimum-scale=1 to enable GPU rasterization */}
                     <meta
@@ -33,7 +32,7 @@ class MyDocument extends Document {
                     <NextScript />
                 </body>
             </html>
-        );
+        )
     }
 }
 
@@ -61,19 +60,19 @@ MyDocument.getInitialProps = ctx => {
     // 4. page.render
 
     // Render app and page and get the context of the page with collected side effects.
-    let pageContext;
+    let pageContext
     const page = ctx.renderPage(Component => {
         const WrappedComponent = props => {
-            pageContext = props.pageContext;
-            return <Component {...props} />;
-        };
+            pageContext = props.pageContext
+            return <Component {...props} />
+        }
 
         WrappedComponent.propTypes = {
             pageContext: PropTypes.object.isRequired,
-        };
+        }
 
-        return WrappedComponent;
-    });
+        return WrappedComponent
+    })
 
     return {
         ...page,
@@ -89,7 +88,7 @@ MyDocument.getInitialProps = ctx => {
                 {flush() || null}
             </React.Fragment>
         ),
-    };
-};
+    }
+}
 
-export default MyDocument;
+export default MyDocument

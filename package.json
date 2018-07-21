@@ -1,7 +1,8 @@
 {
   "name": "react-ssr-graphql-auth-materialui",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Stars Aligned",
+  "description": "React with SSR, Graphql, auth and MaterialUI",
   "license": "MIT",
   "scripts": {
     "dev": "next",
@@ -20,6 +21,7 @@
     "react-apollo": "latest",
     "react-dom": "latest",
     "@material-ui/core": "latest",
+    "@material-ui/icons": "latest",
     "jss": "latest",
     "react-jss": "latest"
   }
