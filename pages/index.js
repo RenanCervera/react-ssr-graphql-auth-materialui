@@ -3,6 +3,7 @@ import cookie from 'cookie'
 import { ApolloConsumer } from 'react-apollo'
 import redirect from '../lib/redirect'
 import checkLoggedIn from '../lib/checkLoggedIn'
+import Button from '@material-ui/core/Button';
 
 
 export default class Index extends React.Component {
@@ -36,7 +37,7 @@ export default class Index extends React.Component {
                 {client => (
                     <div>
                         Hello {this.props.loggedInUser.username}!<br />
-                        <button onClick={this.signout(client)}>Sign out</button>
+                        <Button onClick={this.signout(client)}>Sign out</Button>
                     </div>
                 )}
             </ApolloConsumer>
