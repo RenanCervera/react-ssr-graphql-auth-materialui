@@ -9,8 +9,6 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import Icon from '@material-ui/core/Icon'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import redirect from "../../lib/redirect"
 import { setUser } from '../../lib/store'
 
@@ -30,7 +28,7 @@ class LayoutUserMenu extends Component {
     }
 
     render () {
-        const { user, data, dispatch } = this.props
+        const { data, dispatch } = this.props
 
         if (data.error) return <div>{error.message}</div>
 

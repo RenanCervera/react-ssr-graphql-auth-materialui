@@ -19,22 +19,16 @@ import ListItemText from '@material-ui/core/ListItemText'
 import MenuIcon from '@material-ui/icons/Menu'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import InfoIcon from '@material-ui/icons/Info'
 
-
-const ContextualMenuItems = (
-    <div>
-    </div>
-)
 
 const GeneralMenuItems = (
     <div>
         <Link href='/'>
             <ListItem button as="a" href='/' style={{paddingLeft:22}}>
                 <ListItemIcon>
-                    <i className="large info circle icon"></i>
+                    <i className="large home icon"></i>
                 </ListItemIcon>
-                <ListItemText primary="About"/>
+                <ListItemText primary="Home"/>
             </ListItem>
         </Link>
     </div>
@@ -54,12 +48,12 @@ class Layout extends React.Component {
     }
 
     render() {
-        const { classes, theme, user } = this.props
+        const { classes, theme, title } = this.props
 
         return (
             <div className={classes.root}>
                 <Head>
-                    <title>react-ssr-graphql-auth-materialui</title>
+                    <title>{title ? title : "Auth Boilerplate"}</title>
                 </Head>
                 <AppBar
                     position="absolute"
@@ -75,7 +69,7 @@ class Layout extends React.Component {
                             <MenuIcon />
                         </IconButton>
                         <Typography variant="title" color="inherit" noWrap>
-                            {user ? user.username : "none"}
+                            {title ? title : "Auth Boilerplate"}
                         </Typography>
                     </Toolbar>
                 </AppBar>
@@ -91,9 +85,6 @@ class Layout extends React.Component {
                             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
                         </IconButton>
                     </div>
-                    <Divider />
-                    <List>{ContextualMenuItems}</List>
-                    <Divider />
                     <LayoutUserMenu/>
                     <Divider />
                     <List>{GeneralMenuItems}</List>
@@ -117,8 +108,8 @@ Layout.propTypes = {
 
 // Redux
 function mapStateToProps (state) {
-    const { user } = state
-    return { user }
+    const { title } = state
+    return { title }
 }
 Layout =  connect(mapStateToProps)(Layout)
 

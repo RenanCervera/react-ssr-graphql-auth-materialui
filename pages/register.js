@@ -1,12 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
+import { connect } from "react-redux"
+import { setTitle } from "../lib/store"
 import redirect from '../lib/redirect'
 import checkLoggedIn from '../lib/checkLoggedIn'
 import RegisterForm from '../components/authentication/RegisterForm'
 import Layout from '../components/layout/Layout'
 
 
-export default class Register extends React.Component {
+class Register extends React.Component {
     static async getInitialProps (context) {
         const { loggedInUser } = await checkLoggedIn(context.apolloClient)
 
@@ -15,6 +17,10 @@ export default class Register extends React.Component {
         }
 
         return {}
+    }
+
+    componentDidMount() {
+        this.props.dispatch(setTitle("Register"))
     }
 
     render () {
@@ -27,3 +33,6 @@ export default class Register extends React.Component {
         )
     }
 }
+
+// Redux
+export default connect()(Register)

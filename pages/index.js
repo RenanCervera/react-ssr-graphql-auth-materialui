@@ -1,8 +1,14 @@
 import React from 'react'
 import Layout from '../components/layout/Layout'
+import { connect } from 'react-redux'
+import { setTitle } from "../lib/store"
 
 
-export default class Index extends React.Component {
+class Index extends React.Component {
+    componentDidMount() {
+        this.props.dispatch(setTitle("Home"))
+    }
+
     render () {
         return (
             <Layout>
@@ -11,3 +17,6 @@ export default class Index extends React.Component {
         )
     }
 }
+
+// Redux
+export default connect()(Index)
