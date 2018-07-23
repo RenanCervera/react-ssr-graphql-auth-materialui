@@ -33,13 +33,11 @@ class LoginForm extends React.Component {
                 document.cookie = cookie.serialize('token', data.tokenAuth.token, {
                     maxAge: 30 * 24 * 60 * 60 // 30 days
                 })
-                // Force a reload of all the current queries now that the user is
-                // logged in
+                // Force a reload of all the current queries now that the user is logged in
                 client.cache.reset().then(() => {
                     redirect({}, '/')
                 })
             }} onError={(error) => {
-                // If you want to send error to external service?
                 console.log(error)
             }}>
                 {(tokenAuth, { data, error }) => (
@@ -96,10 +94,6 @@ LoginForm = withApollo(LoginForm)
 
 // Styles
 const styles = theme => ({
-    container: {
-        //display: 'flex',
-        //flexWrap: 'wrap',
-    },
     textField: {
         marginBottom: theme.spacing.unit*3,
         width: 200,
