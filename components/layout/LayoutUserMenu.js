@@ -43,7 +43,7 @@ class LayoutUserMenu extends Component {
                 <List>
                     <div>
                         <Link href='/profile'>
-                            <ListItem button as="a" href='/profile' style={{paddingLeft:22}}>
+                            <ListItem button as="a" href='/profile'>
                                 <ListItemIcon>
                                     <i className="large user circle icon"></i>
                                 </ListItemIcon>
@@ -54,7 +54,7 @@ class LayoutUserMenu extends Component {
                     <div>
                         <ApolloConsumer>
                             {client => (
-                                <ListItem button onClick={this.signout(client)} style={{paddingLeft:22}}>
+                                <ListItem button onClick={this.signout(client)}>
                                     <ListItemIcon>
                                         <i className="large sign-out icon"></i>
                                     </ListItemIcon>
@@ -70,7 +70,7 @@ class LayoutUserMenu extends Component {
                 <List>
                     <div>
                         <Link href='/login'>
-                            <ListItem button as="a" href='/login' style={{paddingLeft:22}}>
+                            <ListItem button as="a" href='/login'>
                                 <ListItemIcon>
                                     <i className="large sign-in icon"></i>
                                 </ListItemIcon>
@@ -80,7 +80,7 @@ class LayoutUserMenu extends Component {
                     </div>
                     <div>
                         <Link href='/register'>
-                            <ListItem button as="a" href='/register' style={{paddingLeft:22}}>
+                            <ListItem button as="a" href='/register'>
                                 <ListItemIcon>
                                     <i className="large user plus icon"></i>
                                 </ListItemIcon>

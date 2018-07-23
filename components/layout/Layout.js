@@ -24,7 +24,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 const GeneralMenuItems = (
     <div>
         <Link href='/'>
-            <ListItem button as="a" href='/' style={{paddingLeft:22}}>
+            <ListItem button as="a" href='/'>
                 <ListItemIcon>
                     <i className="large home icon"></i>
                 </ListItemIcon>

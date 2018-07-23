@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout/Layout'
+import HomeContent from '../components/home/HomeContent'
 import { connect } from 'react-redux'
 import { setTitle } from "../lib/store"
 
@@ -12,7 +13,7 @@ class Index extends React.Component {
     render () {
         return (
             <Layout>
-                <p>Home</p>
+                <HomeContent/>
             </Layout>
         )
     }

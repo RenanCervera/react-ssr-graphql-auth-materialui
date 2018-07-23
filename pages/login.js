@@ -6,6 +6,7 @@ import redirect from '../lib/redirect'
 import checkLoggedIn from '../lib/checkLoggedIn'
 import LoginForm from '../components/authentication/LoginForm'
 import Layout from '../components/layout/Layout'
+import CenteredPaper from '../components/shared/CenteredPaper'
 
 
 class Login extends React.Component {
@@ -26,9 +27,11 @@ class Login extends React.Component {
   render () {
     return (
       <Layout>
-        <LoginForm />
-        <hr />
-        New? <Link prefetch href='/register'><a>Create account</a></Link>
+          <CenteredPaper>
+              <LoginForm />
+              <hr />
+              New? <Link prefetch href='/register'><a>Create account</a></Link>
+          </CenteredPaper>
       </Layout>
     )
   }
