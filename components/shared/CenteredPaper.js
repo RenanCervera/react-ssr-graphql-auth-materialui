@@ -10,20 +10,15 @@ class CenteredPaper extends React.Component {
         const { classes } = this.props
 
         return (
-            <Grid container className={classes.root}>
-                <Grid item xs={12}>
-                    <Grid
-                        container
-                        //spacing={16}
-                        alignItems="flex-start"
-                        justify="center"
-                    >
-                        <Grid item>
-                            <Paper className={classes.paper}>
-                                {this.props.children}
-                            </Paper>
-                        </Grid>
-                    </Grid>
+            <Grid
+                container
+                alignItems="flex-start"
+                justify="center"
+            >
+                <Grid item>
+                    <Paper className={classes.paper}>
+                        {this.props.children}
+                    </Paper>
                 </Grid>
             </Grid>
         )

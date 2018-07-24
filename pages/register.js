@@ -29,8 +29,6 @@ class Register extends React.Component {
             <Layout>
                 <CenteredPaper>
                     <RegisterForm />
-                    <hr />
-                    Already have an account? <Link prefetch href='/login'><a>Login</a></Link>
                 </CenteredPaper>
             </Layout>
         )

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { Mutation, withApollo } from 'react-apollo'
 import gql from 'graphql-tag'
 import cookie from 'cookie'
@@ -7,6 +8,8 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
 
 
 const SIGN_IN = gql`
@@ -18,6 +21,13 @@ const SIGN_IN = gql`
 `
 
 class LoginForm extends React.Component {
+    state = {
+        username: '',
+        usernameError: false,
+        password: '',
+        passwordError: false
+    }
+
     handleChange = name => event => {
         this.setState({
             [name]: event.target.value,
@@ -38,7 +48,16 @@ class LoginForm extends React.Component {
                     redirect({}, '/')
                 })
             }} onError={(error) => {
-                console.log(error)
+                if(error.message && error.message.includes("GraphQL error: Please, enter valid credentials")) {
+                    this.setState({
+                        usernameError: true,
+                        passwordError: true
+                    })
+                }
+
+                this.setState({
+                    password: ''
+                })
             }}>
                 {(tokenAuth, { data, error }) => (
 
@@ -54,29 +73,50 @@ class LoginForm extends React.Component {
                                     password: this.state.password
                                 }
                             })
-
-                            this.setState({
-                                username: '',
-                                password: ''
-                            })
                         }}
                     >
-                        <TextField
-                            id="username"
-                            label="Username"
-                            className={classes.textField}
-                            onChange={this.handleChange('username')}
-                        /><br/>
-                        <TextField
-                            id="password"
-                            label="Password"
-                            className={classes.textField}
-                            onChange={this.handleChange('password')}
-                            type="password"
-                        /><br/>
-                        <Button variant="contained" color="secondary" type="submit">
-                            Sign in
-                        </Button><br/><br/>
+                        <Typography variant="title" color="secondary" gutterBottom align="center">
+                            Auth boilerplate
+                        </Typography>
+                        <Typography variant="display1" gutterBottom>
+                            Login
+                        </Typography>
+                        <div>
+                            <TextField
+                                id="username"
+                                label="Username"
+                                className={classes.textField}
+                                value={this.state.username}
+                                onChange={this.handleChange('username')}
+                                error={this.state.usernameError}
+                            />
+                        </div>
+                        <div>
+                            <TextField
+                                id="password"
+                                label="Password"
+                                className={classes.textField}
+                                onChange={this.handleChange('password')}
+                                type="password"
+                                value={this.state.password}
+                                error={this.state.passwordError}
+                            />
+                        </div>
+                        <Grid
+                            container
+                            alignItems="center"
+                            justify="space-between"
+                            className={classes.submit}
+                        >
+                            <Grid item>
+                                <Link prefetch href='/register'><a>Create account</a></Link>
+                            </Grid>
+                            <Grid item>
+                                <Button variant="contained" color="secondary" type="submit">
+                                    Sign in
+                                </Button>
+                            </Grid>
+                        </Grid>
                     </form>
 
                 )}
@@ -96,10 +136,10 @@ LoginForm = withApollo(LoginForm)
 const styles = theme => ({
     textField: {
         marginBottom: theme.spacing.unit*3,
-        width: 200,
+        maxWidth: 350,
     },
-    menu: {
-        width: 200,
+    submit: {
+        marginTop: theme.spacing.unit*3,
     },
 })
 export default withStyles(styles)(LoginForm)

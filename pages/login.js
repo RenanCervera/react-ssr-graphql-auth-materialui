@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import { connect } from "react-redux"
 import { setTitle } from "../lib/store"
 import redirect from '../lib/redirect'
@@ -29,8 +28,6 @@ class Login extends React.Component {
       <Layout>
           <CenteredPaper>
               <LoginForm />
-              <hr />
-              New? <Link prefetch href='/register'><a>Create account</a></Link>
           </CenteredPaper>
       </Layout>
     )
