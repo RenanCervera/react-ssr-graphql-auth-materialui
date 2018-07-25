@@ -4,6 +4,7 @@
   "author": "Stars Aligned",
   "description": "React with SSR, Graphql, auth and MaterialUI",
   "license": "MIT",
+  "repository": "https://github.com/RenanCD/react-ssr-graphql-auth-materialui",
   "scripts": {
     "dev": "next",
     "build": "next build",
