@@ -15,7 +15,7 @@ const CREATE_USER = gql`
     mutation Create($firstName: String!, $lastName: String!, $username: String!, $email: String!, $password: String!) {
         createUser(firstName: $firstName, lastName: $lastName, username: $username, email: $email, password: $password ) {
             user {
-                id
+                email
             }
         }
     }`
@@ -48,7 +48,7 @@ class RegisterForm extends React.Component {
         return (
             <Mutation mutation={CREATE_USER} onCompleted={(data) => {
                 client.cache.reset().then(() => {
-                    redirect({}, '/emailvalidation?userId=' + data.createUser.user.id)
+                    redirect({}, '/emailvalidation?email=' + data.createUser.user.email)
                 })
             }} onError={(error) => {
                 console.log(error)
