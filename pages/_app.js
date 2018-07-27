@@ -8,7 +8,13 @@ import JssProvider from 'react-jss/lib/JssProvider'
 import getPageContext from '../lib/getPageContext'
 import withReduxStore from '../lib/withReduxStore'
 import { Provider } from 'react-redux'
+import Router from 'next/router'
+import * as gtag from '../lib/gtag'
 
+
+Router.onRouteChangeComplete = url => {
+    gtag.pageview(url)
+}
 
 class MyApp extends App {
     constructor(props) {
