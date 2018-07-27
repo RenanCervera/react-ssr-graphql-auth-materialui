@@ -1,14 +1,14 @@
 {
   "name": "react-ssr-graphql-auth-materialui",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "author": "Stars Aligned",
   "description": "React with SSR, Graphql, auth and MaterialUI",
   "license": "MIT",
   "repository": "https://github.com/RenanCD/react-ssr-graphql-auth-materialui",
   "scripts": {
-    "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js --watch server"
   },
   "dependencies": {
     "apollo-boost": "latest",
@@ -28,6 +28,11 @@
     "react-redux": "latest",
     "redux": "latest",
     "redux-thunk": "latest",
-    "redux-devtools-extension": "latest"
+    "redux-devtools-extension": "latest",
+    "express": "latest",
+    "sitemap": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
   }
 }
