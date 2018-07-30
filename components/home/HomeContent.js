@@ -4,9 +4,11 @@ import CenteredPaper from '../shared/CenteredPaper'
 
 export default class HomeContent extends React.Component {
     render() {
+        const { t } = this.props
+
         return (
             <CenteredPaper>
-                HOME
+                {t('welcome')}
 
                 <p>
                     <a href='/sitemap.xml' target='_blank'>
