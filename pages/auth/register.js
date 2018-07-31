@@ -1,12 +1,12 @@
 import React from 'react'
 import Link from 'next/link'
 import { connect } from "react-redux"
-import { setTitle } from "../lib/store"
-import redirect from '../lib/redirect'
-import checkLoggedIn from '../lib/checkLoggedIn'
-import RegisterForm from '../components/authentication/RegisterForm'
-import Layout from '../components/layout/Layout'
-import CenteredPaper from '../components/shared/CenteredPaper'
+import { setTitle } from "../../lib/store"
+import redirect from '../../lib/redirect'
+import checkLoggedIn from '../../lib/checkLoggedIn'
+import RegisterForm from '../../components/authentication/RegisterForm'
+import Layout from '../../components/layout/Layout'
+import CenteredPaper from '../../components/shared/CenteredPaper'
 
 
 class Register extends React.Component {

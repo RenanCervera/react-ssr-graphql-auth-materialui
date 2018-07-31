@@ -1,9 +1,9 @@
 import React from 'react'
 import { withRouter } from 'next/router'
 import Layout from '../components/layout/Layout'
-import EmailValidationContent from '../components/authentication/EmailValidationContent'
+import EmailValidationContent from '../../components/authentication/EmailValidationContent'
 import { connect } from 'react-redux'
-import { setTitle } from "../lib/store"
+import { setTitle } from "../../lib/store"
 
 
 class EmailValidation extends React.Component {

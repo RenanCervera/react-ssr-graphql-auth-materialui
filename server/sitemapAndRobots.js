@@ -25,13 +25,13 @@ const setup = ({ server }) => {
     })
 
     sitemap.add({
-        url: '/login',
+        url: '/auth/login',
         changefreq: 'daily',
         priority: 0.8
     })
 
     sitemap.add({
-        url: '/register',
+        url: '/auth/register',
         changefreq: 'daily',
         priority: 0.8
     })

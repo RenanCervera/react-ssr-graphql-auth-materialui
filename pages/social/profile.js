@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '../components/layout/Layout'
+import Layout from '../../components/layout/Layout'
 import { connect } from 'react-redux'
-import { setTitle } from "../lib/store"
-import ProfileContent from "../components/social/ProfileContent";
+import { setTitle } from "../../lib/store"
+import ProfileContent from "../../components/social/ProfileContent";
 
 
 class Profile extends React.Component {

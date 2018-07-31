@@ -42,8 +42,8 @@ class LayoutUserMenu extends Component {
             return (
                 <List>
                     <div>
-                        <Link href='/profile'>
-                            <ListItem button as="a" href='/profile'>
+                        <Link href='/social/profile'>
+                            <ListItem button as="a" href='/social/profile'>
                                 <ListItemIcon>
                                     <i className="large user circle icon"></i>
                                 </ListItemIcon>
@@ -69,8 +69,8 @@ class LayoutUserMenu extends Component {
             return (
                 <List>
                     <div>
-                        <Link href='/login'>
-                            <ListItem button as="a" href='/login'>
+                        <Link prefetch href='/auth/login'>
+                            <ListItem button as="a" href='/auth/login'>
                                 <ListItemIcon>
                                     <i className="large sign-in icon"></i>
                                 </ListItemIcon>
@@ -79,8 +79,8 @@ class LayoutUserMenu extends Component {
                         </Link>
                     </div>
                     <div>
-                        <Link href='/register'>
-                            <ListItem button as="a" href='/register'>
+                        <Link prefetch href='/auth/register'>
+                            <ListItem button as="a" href='/auth/register'>
                                 <ListItemIcon>
                                     <i className="large user plus icon"></i>
                                 </ListItemIcon>

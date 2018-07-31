@@ -230,7 +230,7 @@ class RegisterForm extends React.Component {
                             className={classes.submit}
                         >
                             <Grid item>
-                                <Link prefetch href='/login'><a>Login</a></Link>
+                                <Link href='/auth/login'><a>Login</a></Link>
                             </Grid>
                             <Grid item>
                                 <Button variant="contained" color="secondary" type="submit">

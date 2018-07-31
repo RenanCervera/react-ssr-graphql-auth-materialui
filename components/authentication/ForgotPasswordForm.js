@@ -20,7 +20,7 @@ const SIGN_IN = gql`
     }
 `
 
-class LoginForm extends React.Component {
+class ForgotPasswordForm extends React.Component {
     state = {
         username: '',
         usernameError: false,
