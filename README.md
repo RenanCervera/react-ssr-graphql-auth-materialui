@@ -12,7 +12,7 @@ SemanticUI (icons only)
 I18Next (internationalization)
 Google Analytics (tracks and reports website traffic)
 Sitemap/robots.txt (SEO using Node.js)
-Express (web server and generates sitemap/robots.txt for SEO)
+Express (web server and generates SEO sitemap.xml/robots.txt)
 ```
 
 ## How to use
